@@ -19,7 +19,7 @@ Add your answers to this markdown file.
 ### Prob. 1
 - It is just an approximation to real world results, we omit lots of factors to get a more refined model. When we calculate the time complexity we ignore constants and lower order terms than our max. For example, if our time complexity equation was $10*n^3+n^2$, we would say it behaves like O($n^3$), omitting the factor of 10 and $n^2$ so we have a simple model for extremely large values of $n$.
 - Different machines can run different instructions for the same program, such as ARM vs x86. This can change the actual run-time with the same complexity
-- Asymptotic analysis assumes typically assumes worst-case or average-case data sets. Obviously not all data is worst-case or average-case. Depending on what you are analyzing (worst or average or best), you can get wildly different results than expected.
+- Not all algorithms perform identically to their asymptotic analysis. This means that sometimes algorithm A can have a poor expectation with the analysis, but perform better than algorithm B in real life scenarios. For example, quick sort and heap sort have the same best case complexity but quick has a worse worst case complexity. So, if we had a worst-case scenario and we compared the two, we would be lead to believe that heap sort is the better algorithm, although quick sort almost always performs better on most machines.
   
 ### Prob. 2
 
@@ -46,8 +46,10 @@ Therefore, it should take 50 seconds to find an element in 10,000 elements
 ### Prob. 3
 - The machine could have hardware restrictions, such as exceeding the maximum amount of RAM space available.
 - The first test (5 seconds) could have been executed on different architecture than your machine, causing different instructions to be executed.
-- There could be more constants in the binary search algorithm that are not accounted for at such a relatively small n. The generalized $C$ constant does not take into account all overhead. For example, there could be a constant $D$, that only happens when the list is opened so it only happens once. For larger lists that take more overall time it would have little effect, but for smaller lists that don't take long to iterate through the opening delay $D$ would seem extremely large. 
+- The new tree could exceed the amount of space available in the L1, L2, or L3 caches. This would cause the data to be moved to a higher, and thereby slower, space in the computer's memory. I.e., let's say L1 (very fast) can only hold 2,000 elements and L2 (fast) can hold 20,000. When the 1,000 element tree is loaded into memory, it will be loaded into L1, so it can access the data extremely fast. But, the larger 10,000 element tree would have to be loaded into L2, slowing down the process.
 
 ## Disclaimer
+
+I used [https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort](this) to make sure that I wasn't wrong in saying that quick sort performs better in general.
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
