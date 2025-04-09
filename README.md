@@ -19,7 +19,7 @@ Add your answers to this markdown file.
 ### Prob. 1
 - It is just an approximation to real world results, we omit lots of factors to get a more refined model. When we calculate the time complexity we ignore constants and lower order terms than our max. For example, if our time complexity equation was $10*n^3+n^2$, we would say it behaves like O($n^3$), omitting the factor of 10 and $n^2$ so we have a simple model for extremely large values of $n$.
 - Different machines can run different instructions for the same program, such as ARM vs x86. This can change the actual run-time with the same complexity
-- Not all algorithms are implemented/deployed identically even if they have the same asymptotic complexity. A poorly implemented algorithm with complexity O(log(n)) can perform worse than a really well implemented algorithm with complexity O(n*log(n)). The poor quality implementation may have memory leaks, excessive memory allocation/dealloc, complex recursion, and other poor designs causing it to perform worse than the theoretically worse algorithm.
+- Asymptotic analysis typically considers the worst-case, average-case, or best-case scenarios, but it does not account for the specific characteristics of the input data that might be encountered in practice. Certain algorithms may perform very well on specific types of data, even if their worst-case complexity is not optimal.
   
 ### Prob. 2
 
