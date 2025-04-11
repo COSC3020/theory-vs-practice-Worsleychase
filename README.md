@@ -19,7 +19,7 @@ Add your answers to this markdown file.
 ### Prob. 1
 - It is just an approximation to real world results, we omit lots of factors to get a more refined model. When we calculate the time complexity we ignore constants and lower order terms than our max. For example, if our time complexity equation was $10*n^3+n^2$, we would say it behaves like O($n^3$), omitting the factor of 10 and $n^2$ so we have a simple model for extremely large values of $n$.
 - Different machines can run different instructions for the same program, such as ARM vs x86. This can change the actual run-time with the same complexity
-- Algorithms with the same theoretical run time complexitity can perform differently with real data. For example, even though merge and heap sort always have O(n log(n)) complexity, quick sort is generally better for real world data even though it is O(n^2) for its worst-case, making it theoretically worse.
+- Asymptotic analysis focuses on very large data sets and the behavior of algorithms with these data sets. When we use smaller data sets some theoretically worse algorithms can perform better than theoretically better algorithms. An algorithm with complexity $O(n)$ can perform better than an algorithm with complexity $O(\log(n))$ even though it is technically worse.
   
 ### Prob. 2
 
