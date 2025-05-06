@@ -13,3 +13,43 @@
   complexity suggests a different time.
 
 Add your answers to this markdown file.
+
+## Solution
+
+### Prob. 1
+- It is just an approximation to real world results, we omit lots of factors to get a more refined model. When we calculate the time complexity we ignore constants and lower order terms than our max. For example, if our time complexity equation was $10*n^3+n^2$, we would say it behaves like O($n^3$), omitting the factor of 10 and $n^2$ so we have a simple model for extremely large values of $n$.
+- Different machines can run different instructions for the same program, such as ARM vs x86. This can change the actual run-time with the same complexity
+- Cache effects and different memory access patterns can change the real performance of an algorithm that is not captured by asymptotic analysis. For example, an algorithm that sequentially accesses memory would likely perform better than one that randomly accessed memory, even though they have the same asymptotic complexity, due to how CPU caching works. 
+  
+### Prob. 2
+
+A balanced tree is $O(\log(n))$, otherwise its $O(n)$. Assuming the worst case:
+
+Let $C = \text{time constant,}$  $n=1000$, $t = 5$
+
+$C*O(n)=t$
+
+$C*1000=5$
+
+$\therefore C=\frac{5}{1000}$
+
+So, if $n=10000$:
+
+$C*n=t$
+
+$\frac{5}{1000}*10000=t$
+
+$t = 50$
+
+Therefore, it should take 50 seconds to find an element in 10,000 elements
+
+### Prob. 3
+- The machine could have hardware restrictions, such as exceeding the maximum amount of RAM space available.
+- The first test (5 seconds) could have been executed on different architecture than your machine, causing different instructions to be executed.
+- The new tree could exceed the amount of space available in the L1, L2, or L3 caches. This would cause the data to be moved to a higher, and thereby slower, space in the computer's memory. I.e., let's say L1 (very fast) can only hold 2,000 elements and L2 (fast) can hold 20,000. When the 1,000 element tree is loaded into memory, it will be loaded into L1, so it can access the data extremely fast. But, the larger 10,000 element tree would have to be loaded into L2, slowing down the process.
+
+## Disclaimer
+
+I used [this](https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort) to make sure that I wasn't wrong in saying that quick sort performs better in general.
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
